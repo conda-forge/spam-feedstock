@@ -37,7 +37,6 @@ requirements:
     - python
     - matplotlib-base
     - gmp                                    # [unix]
-    - m2w64-gmp                              # [dwin]
     - mpir                                   # [win]
     - r-base
     - numpy
