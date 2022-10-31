@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gricad-gitlab.univ-grenoble-alpes.fr/ttk/spam/-/archive/version-{{ version }}/spam-version-{{ version }}.tar.gz
-  sha256: bc1c898392eac220784ae534550e2b3b0c071053f9aca870264cc79718b8886e
+  sha256: ec932d3a140ef4fcd7072627ba83c7c03be1bac1e9c94c53d25ceca7d6717432
 
 build:
   number: 1
