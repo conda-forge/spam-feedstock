@@ -1,21 +1,19 @@
-{% set name = "spam" %}
 {% set version = "0.6.1.1" %}
 
 package:
-  name: {{ name|lower }}
-  version: 0.6.1.1
+  name: spam
+  version: {{ version }}
 
 source:
-  url: https://gricad-gitlab.univ-grenoble-alpes.fr/ttk/spam/-/archive/62a7c325dbea0d90314ba19a0ac76a61a23691f4/spam-62a7c325dbea0d90314ba19a0ac76a61a23691f4.tar
-  sha256: bc1c898392eac220784ae534550e2b3b0c071053f9aca870264cc79718b8886e
+  url: https://gricad-gitlab.univ-grenoble-alpes.fr/ttk/spam/-/archive/version-{{ version }}/spam-version-{{ version }}.tar.gz
+  sha256: ec932d3a140ef4fcd7072627ba83c7c03be1bac1e9c94c53d25ceca7d6717432
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - python       # [unix]
-    - python =3.7  # [win]
+    - python
     - numpy
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('cxx') }}
@@ -27,8 +25,7 @@ requirements:
     - m2w64-gmp                              # [win]
     - pyamg
   host:
-    - python       # [unix]
-    - python =3.7  # [win]
+    - python
     - pip
     - numpy
     - pybind11
@@ -37,11 +34,9 @@ requirements:
     - gmp                                    # [unix]
     - m2w64-gmp                              # [win]
   run:
-    - python       # [unix]
-    - python =3.7  # [win]
+    - python
     - matplotlib-base
     - gmp                                    # [unix]
-    - m2w64-gmp                              # [dwin]
     - mpir                                   # [win]
     - r-base
     - numpy
