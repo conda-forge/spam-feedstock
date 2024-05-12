@@ -1,0 +1,18 @@
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2017
+numpy:
+- '1.21'
+pin_run_as_build:
+  r-base:
+    min_pin: x.x
+    max_pin: x.x
+pybind11_abi:
+- '4'
+r_base:
+- '4.0'
+target_platform:
+- win-64
