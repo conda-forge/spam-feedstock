@@ -1,22 +1,20 @@
-cdt_name:
-- cos6
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- gxx
+- clangxx
 cxx_compiler_version:
-- '10'
-docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
+- '16'
 gmp:
 - '6'
+macos_machine:
+- x86_64-apple-darwin13.4.0
 numpy:
-- '1.19'
+- '1.22'
 pin_run_as_build:
-  gmp:
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
@@ -28,9 +26,9 @@ pybind11_abi:
 python:
 - 3.8.* *_cpython
 r_base:
-- '4.0'
+- '4.2'
 target_platform:
-- linux-64
+- osx-64
 zip_keys:
 - - python
   - numpy
