@@ -8,38 +8,49 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_python3.7.____cpythonr_base4.0:
-        CONFIG: linux_64_python3.7.____cpythonr_base4.0
+      linux_64_numpy1.22python3.10.____cpythonr_base4.2:
+        CONFIG: linux_64_numpy1.22python3.10.____cpythonr_base4.2
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_python3.7.____cpythonr_base4.1:
-        CONFIG: linux_64_python3.7.____cpythonr_base4.1
+      linux_64_numpy1.22python3.10.____cpythonr_base4.3:
+        CONFIG: linux_64_numpy1.22python3.10.____cpythonr_base4.3
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_python3.8.____cpythonr_base4.0:
-        CONFIG: linux_64_python3.8.____cpythonr_base4.0
+      linux_64_numpy1.22python3.8.____cpythonr_base4.2:
+        CONFIG: linux_64_numpy1.22python3.8.____cpythonr_base4.2
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_python3.8.____cpythonr_base4.1:
-        CONFIG: linux_64_python3.8.____cpythonr_base4.1
+      linux_64_numpy1.22python3.8.____cpythonr_base4.3:
+        CONFIG: linux_64_numpy1.22python3.8.____cpythonr_base4.3
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_python3.9.____cpythonr_base4.0:
-        CONFIG: linux_64_python3.9.____cpythonr_base4.0
+      linux_64_numpy1.22python3.9.____cpythonr_base4.2:
+        CONFIG: linux_64_numpy1.22python3.9.____cpythonr_base4.2
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_python3.9.____cpythonr_base4.1:
-        CONFIG: linux_64_python3.9.____cpythonr_base4.1
+      linux_64_numpy1.22python3.9.____cpythonr_base4.3:
+        CONFIG: linux_64_numpy1.22python3.9.____cpythonr_base4.3
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_numpy1.23python3.11.____cpythonr_base4.2:
+        CONFIG: linux_64_numpy1.23python3.11.____cpythonr_base4.2
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_numpy1.23python3.11.____cpythonr_base4.3:
+        CONFIG: linux_64_numpy1.23python3.11.____cpythonr_base4.3
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_numpy1.26python3.12.____cpythonr_base4.2:
+        CONFIG: linux_64_numpy1.26python3.12.____cpythonr_base4.2
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_numpy1.26python3.12.____cpythonr_base4.3:
+        CONFIG: linux_64_numpy1.26python3.12.____cpythonr_base4.3
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360
 
   steps:
-  - script: |
-         rm -rf /opt/ghc
-         df -h
-    displayName: Manage disk space
-
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
   - script: |
